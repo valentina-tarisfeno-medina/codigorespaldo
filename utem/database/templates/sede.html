@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<html>
+    <head>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="/static/css/gestion.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+    <body>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+
+{% block content %}
+  <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+        Sedes
+    </a>
+    <a href="{% url 'homemacul' %}" class="list-group-item list-group-item-action">Campus Macul</a>
+    <a href="{% url 'homeprovi' %}" class="list-group-item list-group-item-action">Campus Providencia</a>
+    <a href="{% url 'home' %}" class="list-group-item list-group-item-action">Casa central</a>
+    </div>
+  
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock  %}
+</div>
+            </div>
+        </div>
+    </body>
+</html>

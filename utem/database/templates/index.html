@@ -1,0 +1,54 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+        <meta charset="UTF-8">
+        <title>
+            {% block title %} {% endblock %}
+        </title>
+
+    </head>
+     <style >
+        #barra{
+            margin:20; 
+            padding:20;
+            list-style: none;
+            text-transform: uppercase;
+            font_family: georgia; 
+        }
+        #barra li{
+            display: inline;
+            margin:  2em;
+            font_family: georgia; 
+        }
+
+    </style>
+    <body>  
+        <h1 style="background-color:cadetblue; color:whitesmoke; text-align:center"> Parking utem </h1>
+        <br></br>
+        <div style="text-align:center">
+            <img src="/static/img/Logo.jpg" wide="100" height="100">
+        </div> 
+        {% block content %}
+         <br></br>
+        <ul id="barra", style="text-align:center">
+            <li><a href="/">Home</a></li>
+            <br></br>
+            <li><a href="/funcionario">funcionario</a></li>
+            <br></br>
+            <li><a href="/visitante">visitante</a></li>
+            <br></br>
+            <li><a href="/portero">portero</a></li>
+            <br></br>
+            <li><a href="/reserva">reserva</a></li>
+            <br></br>
+            <li><a href="/disponibilidad">diponibilidad</a></li>
+        </ul>
+
+        {% endblock %}
+        <br></br>
+        <p style="background-color:cadetblue; color:whitesmoke; text-align:center"> Universidad tecnologica metropolitana </p>
+
+
+    </body>
+</html>

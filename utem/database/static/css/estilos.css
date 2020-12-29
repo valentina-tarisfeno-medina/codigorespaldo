@@ -1,0 +1,30 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background: linear-gradient(rgba(1, 49, 63, 0.65), rgba(58, 73, 90, 0.65)), url("../img/fondo.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    font-size: 1.2em;   
+    text-align:center;
+  }
+
+  @media (min-width: 992px) {
+    .intro .intro-img {
+      width: 50%;
+      float: left;
+    }
+    .intro .intro-text {
+      left: 590;
+      width: 10%;
+      margin-top: 0rem;
+      background-color: rgb(10, 9, 56);
+      color: cornsilk;
+      position: absolute;
+    }
+    .intro .intro-text .intro-button {
+      width: 100%;
+      left: 0;
+      position: absolute;
+      bottom: -2rem;
+    }
+  }

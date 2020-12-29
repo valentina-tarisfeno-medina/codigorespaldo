@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">Utem Parking</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive"> 
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Menú</a>
+          </li>
+          <li class="nav-item {% if request.path == '/funcionarios' %} active {% endif %}  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'funcionarios' %}">Ingresar Funcionario</a>
+          </li>
+          <li class="nav-item  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'listar_funcionarios' %}">Listar Funcionarios</a>
+          </li>
+   
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/css/gestion.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <title>
+            Funcionario
+        </title> 
+    </head>
+<body>
+    <header>
+        
+        <h1> Funcionarios Utem </h1>
+    </header>
+<section class="wrapper">
+      <section class="main">
+
+<p><strong>Ingresar datos funcionarios </strong></p>
+
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary" data-toggle="submit" aria-pressed="false" autocomplete="off">
+        Guardar
+        </button>
+        <h1>                 </h1>
+    </form>
+
+</body>
+
+{% endblock  %}
+
+
+
+  
+      
+

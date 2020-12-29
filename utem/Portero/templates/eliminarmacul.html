@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<body>
+
+<section class="wrapper">
+      <section class="main">
+
+        <h3> ¿Desea eleminiar el registro de {{ por.Nombre }}? </h3>
+
+        <a class= 'btn btn-danger' data-toggle="submit"  href="{% url 'listar_porteromacul' %}"> Si, eliminar </a>
+        <a class= 'btn btn-default' href="{% url 'listar_porteromacul' %}"> Cancelar </a>
+        <h1>                 </h1>
+    </form>
+
+</body>
+
+{% endblock  %}

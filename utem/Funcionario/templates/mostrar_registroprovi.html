@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'homeprovi' %}">Utem Parking</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive"> 
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'homeprovi' %}">Menú</a>
+          </li>
+          <li class="nav-item {% if request.path == '/funcionarios' %} active {% endif %}  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'funcionarioprovidencia' %}">Ingresar Funcionario</a>
+          </li>
+          <li class="nav-item  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'listar_funcionariosprovidencia' %}">Listar Funcionarios</a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <title>
+            Mostrar
+        </title> 
+    </head>
+<body>
+    <header>
+
+    </header>
+
+<section class="container">
+    <section class="main">
+            <div class="alert alert-success" role="alert">
+              Funcionario ingresado exitosamente
+            </div>   
+            <tbody>
+            {% if Funcionarioprovi %}
+              <ul class="list-group">
+                <li class="list-group-item active" aria-current="true">Datos funcionario</li>
+                <li class="list-group-item">Id: {{Funcionarioprovi.id}}</li>
+                <li class="list-group-item">Nombre: {{ Funcionarioprovi.Nombre }}</li>
+                <li class="list-group-item">Rut: {{ Funcionarioprovi.Rut }}</li>
+                <li class="list-group-item">Patente: {{ Funcionarioprovi.Patente }}</li>
+                <li class="list-group-item">Fecha Ingreso: {{ Funcionarioprovi.Fecha_Ingreso }}</li>
+                <li class="list-group-item">Fecha Salida: {{ Funcionarioprovi.Fecha_Salida }}</li>
+                <li class="list-group-item">Sede: {{ Funcionarioprovi.Sede }}</li>
+                <li class="list-group-item">Motivo: {{ Funcionarioprovi.Motivo }}</li>
+              </ul>
+            </tbody>
+            {% else %}
+            <h1> No existe registro de funcionarios </h1>
+            {% endif %}
+        </table>
+    </section>
+</section>
+
+</body>
+
+{% endblock  %}
