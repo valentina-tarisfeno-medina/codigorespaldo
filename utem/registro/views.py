@@ -10,6 +10,7 @@ import datetime
 from django.utils import timezone
 from django.shortcuts import redirect
 import numpy as np 
+from Disponibilidad.models import Sede
 
 
 def registro(request):
@@ -23,6 +24,7 @@ def registro(request):
             return redirect('mostrar_registro', pk=post.id)
     else:
         form = FormularioRegistro()
+        sede = Sede.objects.all()
     return render(request, 'registro.html', {'form': form})
 
 def mostrar_registro(request, pk):

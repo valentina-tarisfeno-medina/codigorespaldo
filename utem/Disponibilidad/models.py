@@ -5,10 +5,11 @@ from django.db import models
 
 class Sede(models.Model):
     id = models.AutoField(primary_key=True)
-    campus_macul = models.CharField(max_length=100)
-    campus_providencia = models.CharField(max_length=100)
-    casa_central=models.CharField(max_length=100)
+    nombre_sede = models.CharField(max_length=100)
     cantidad_estacionamiento=models.IntegerField()
+    def __str__(self):
+         return self.nombre_sede
+    
 
 
 class Detalle_dispo(models.Model):

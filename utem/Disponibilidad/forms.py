@@ -6,25 +6,18 @@ class FormularioSede(forms.ModelForm):
     class Meta:
         model = Sede
 
-        fields = ('campus_macul','campus_providencia','casa_central','cantidad_estacionamiento')
+        fields = ('nombre_sede','cantidad_estacionamiento')
 
         labels = {
-            'campus_macul':'Campus Macul',
-            'campus_providencia':'Campus Providencia',
-            'casa_central':'Casa Central ', 
+            'nombre_sede':'Nombre Sede',
             'cantidad_estacionamiento':'cantidad_estacionamiento',
 
         }
 
         widgets = {
-            'campus_macul' : forms.TextInput(attrs={'class':'form-control'}),
-            'campus_providencia': forms.TextInput(attrs={'class':'form-control'}),
-            'casa_central' : forms.TextInput(attrs={'class':'form-control'}),
+            'nombre_sede' : forms.TextInput(attrs={'class':'form-control'}),
             'cantidad_estacionamiento' : forms.TextInput(attrs={'class':'form-control'})
              }
-
-
-    
 
 class FormularioDetalle_dispo(forms.ModelForm):
     

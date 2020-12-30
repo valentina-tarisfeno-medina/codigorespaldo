@@ -26,8 +26,8 @@ class FormularioReserva(forms.ModelForm):
             'rut_reserva' : forms.TextInput(attrs={'class':'form-control'}), 
             'usuario_reserva' : forms.TextInput(attrs={'class':'form-control'}), 
             'cantidad_horas' : forms.TextInput(attrs={'class':'form-control'}), 
-            'fecha_entrada' : forms.TextInput(attrs={'class':'form-control'}),
-            'fecha_salida' : forms.TextInput(attrs={'class':'form-control'}),
+            'fecha_entrada' : forms.DateTimeInput(attrs={'type':'date'}),
+            'fecha_salida' : forms.DateTimeInput(attrs={'type':'date'}),
             'patente' : forms.TextInput(attrs={'class':'form-control'}), 
             'sede' : forms.TextInput(attrs={'class':'form-control'}),
             'motivo' : forms.TextInput(attrs={'class':'form-control'})

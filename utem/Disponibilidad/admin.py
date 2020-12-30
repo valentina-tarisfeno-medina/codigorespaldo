@@ -4,7 +4,7 @@ from .models import Sede, Detalle_dispo
 # Register your models here.
 
 class SedeAdmin(admin.ModelAdmin):
-    list_display=('campus_macul','campus_providencia','casa_central','cantidad_estacionamiento')
+    list_display=('nombre_sede','cantidad_estacionamiento')
 
 admin.site.register(Sede, SedeAdmin)
 
