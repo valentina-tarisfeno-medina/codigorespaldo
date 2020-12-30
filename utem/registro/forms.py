@@ -24,7 +24,6 @@ class FormularioRegistro(forms.ModelForm):
             'rut' : forms.TextInput(attrs={'class':'form-control'}), 
             'patente' : forms.TextInput(attrs={'class':'form-control'}),
             'sede' : forms.TextInput(attrs={'class':'form-control'}), 
-            'usuario': forms.TextInput(attrs={'class':'form-control'}),
             'fecha_entrada' : forms.DateInput(attrs={'type':'date'}), 
             'fecha_salida' : forms.DateInput(attrs={'type':'date'}),
             'tipo' : forms.TextInput(attrs={'class':'form-control'}),
@@ -37,12 +36,14 @@ class Formulariotipo_registro(forms.ModelForm):
     class Meta:
         model = tipo_registro
 
-        fields = ('nombre')
+        fields = ('id','nombre_registro')
 
         labels = {
-            'nombre':'nombre'
+            'id':'id',
+            'nombre_registro':'nombre_registro'
         }
 
         widgets = {
-            'nombre' : forms.TextInput(attrs={'class':'form-control'})
+            'id': forms.TextInput(attrs={'class':'form-control'}),
+            'nombre_registro' : forms.TextInput(attrs={'class':'form-control'})
              }

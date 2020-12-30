@@ -17,37 +17,8 @@ def home(request):
         return render(request, "home.html")
     return redirect('home')
 
-def homemacul(request):
-    if request.user.is_authenticated:
-        return render(request, "homemacul.html")
-    return redirect('homemacul')
-
-def homeprovi(request):
-    if request.user.is_authenticated:
-        return render(request, "homeprovi.html")
-    return redirect('homeprovi')
-
-def sede(request):
-    return render(request, "sede.html")
-
-def campusmacul(request):
-    return render(request, "campusmacul.html")
-
-def campusprovi(request):
-    return render(request, "campusprovi.html")
-
-def casacentral(request):
-    return render(request, "casacentral.html")
-
 def ingresar_datos(request):
     return render(request, "Ingresar_datos.html")
-
-def ingresar_datosmacul(request):
-    return render(request, "Ingresar_datosmacul.html")
-
-def ingresar_datosprovidencia(request):
-    return render(request, "Ingresar_datosprovi.html")
-
 
 def login(request):
     # Creamos el formulario de autenticación vacío
@@ -69,7 +40,7 @@ def login(request):
                 # Hacemos el login manualmente
                 do_login(request, user)
                 # Y le redireccionamos a la portada
-                return redirect('sede')
+                return redirect('home')
 
     # Si llegamos al final renderizamos el formulario
     return render(request, "login.html", {'form': form})

@@ -27,11 +27,8 @@
           <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Menú</a>
           </li>
-          <li class="nav-item {% if request.path == '/funcionarios' %} active {% endif %}  px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'funcionarios' %}">Ingresar Funcionario</a>
-          </li>
-          <li class="nav-item {% if request.path == '/visitante' %} active {% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'visitante' %}">Ingresar Visitante</a>
+          <li class="nav-item {% if request.path == '/registro' %} active {% endif %}  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'registro' %}">Ingresar Registro</a>
           </li>
            <li class="nav-item {% if request.path == '/reservas' %} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'reservas' %}">Ingresar Reserva</a>

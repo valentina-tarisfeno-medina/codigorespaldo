@@ -7,17 +7,17 @@
  <!-- Navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'homemacul' %}">Utem Parking</a>
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">Utem Parking</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive"> 
         <ul class="navbar-nav mx-auto">
           <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'homemacul' %}">Menú</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Menú</a>
           </li>
-          <li class="nav-item {% if request.path == '/disponibilidad' %} active {% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'sedemacul' %}">Agregar Sede</a>
+          <li class="nav-item {% if request.path == '/sede' %} active {% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'sede' %}">Sede</a>
           </li>
          
         </ul>
@@ -46,21 +46,25 @@
             <thead class="thead-light">
                 <tr>
                     <th scope='col'>id</th>
-                    <th scope='col'>Sede</th>
-                    <th scope='col'>Cantidad estacionamientos</th>
+                    <th scope='col'>Campus Macul</th>
+                    <th scope='col'>Campus Providencia</th>
+                    <th scope='col'>Casa Central</th>
+                    <th scope='col'>Cantidad Estacionamiento</th>
                     <th scope='col'>Acciones</th>           
                 </tr>
             </thead>
             <tbody>
-            {% if sedemacul %}
-            {% for sm in sedemacul%}
+            {% if sedes %}
+            {% for sc in sedes%}
                 <tr>
-                    <td scope='row'>{{sm.id}}</td> 
-                    <td> {{ sm.Sede }} </td>
-                    <td> {{ sm.Cantidad_estacionamientos }} </td>
+                    <td scope='row'>{{sc.id}}</td> 
+                    <td> {{ sc.campus_macul }} </td>
+                    <td> {{ sc.campus_providencia }} </td>
+                    <td> {{ sc.casa_central }} </td>
+                    <td> {{ sc.cantidad_estacionamiento }} </td>
                     <td> 
-                        <a class="btn btn-primary btn-sm" href="{% url 'sedemacul_editar' pk=sm.pk %}"> Editar</a>
-                        <a class="btn btn-danger btn-sm" href="{% url 'sedemacul_eliminar' pk=sm.pk %}"> Eliminar</a>
+                        <a class="btn btn-primary btn-sm" href="{% url 'sede_editar' pk=sc.pk %}"> Editar</a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'sede_eliminar' pk=sc.pk %}"> Eliminar</a>
                     </td>
                 </tr>
             {% endfor %}

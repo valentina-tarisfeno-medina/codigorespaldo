@@ -19,12 +19,12 @@ def sede(request):
             return redirect('mostrar_sede', pk=post.id)
     else:
         form = FormularioSede()
-    return render(request, 'sedecentro.html', {'form': form})
+    return render(request, 'sede.html', {'form': form})
 
 def mostrar_sede(request, pk):
     sc = get_object_or_404(Sede, id=pk)
-    contexto = {'sede_centro':sc}
-    return render(request, "mostrar_registro_sedecentro.html", contexto)
+    contexto = {'sede':sc}
+    return render(request, "mostrar_registro_sede.html", contexto)
 
 def sede_editar(request, pk):
     sc = get_object_or_404(Sede, id=pk)
@@ -38,15 +38,15 @@ def sede_editar(request, pk):
             return redirect('mostrar_sede', pk=pk)
     else:
         form = FormularioSede(instance=sc)
-        return render(request, 'sedecentro.html', {'form': form})
+        return render(request, 'sede.html', {'form': form})
 
 def sede_eliminar(request, pk):
     sc = get_object_or_404(Sede, id=pk)
     sc.delete()
-    return render(request, 'verificarcentro.html', {'sc': sc})
+    return render(request, 'verificar.html', {'sc': sc})
 
 def listar_sede(request):
     sc=Sede.objects.all()
-    contexto = {'sedecentro':sc}
-    return render(request, "mostrarsedecentro.html", contexto)
+    contexto = {'sedes':sc}
+    return render(request, "mostrarsede.html", contexto)
 
