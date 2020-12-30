@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Sede, Detalle_dispo
+from .models import Sede
 
 # Register your models here.
 
@@ -8,9 +8,6 @@ class SedeAdmin(admin.ModelAdmin):
 
 admin.site.register(Sede, SedeAdmin)
 
-class Detalle_dispoAdmin(admin.ModelAdmin):
-    list_display=('sede','estado')
 
-admin.site.register(Detalle_dispo, Detalle_dispoAdmin)
 
 

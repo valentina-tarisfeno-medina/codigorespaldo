@@ -1,5 +1,5 @@
 from django import forms
-from .models import Sede, Detalle_dispo
+from .models import Sede
 
 class FormularioSede(forms.ModelForm):
     
@@ -19,19 +19,3 @@ class FormularioSede(forms.ModelForm):
             'cantidad_estacionamiento' : forms.TextInput(attrs={'class':'form-control'})
              }
 
-class FormularioDetalle_dispo(forms.ModelForm):
-    
-    class Meta:
-        model = Detalle_dispo
-
-        fields = ('sede','estado')
-
-        labels = {
-            'sede':'Sede',
-            'estado':'Estado',
-        }
-
-        widgets = {
-            'sede' : forms.TextInput(attrs={'class':'form-control'}),
-            'estado': forms.TextInput(attrs={'class':'form-control'})
-             }
