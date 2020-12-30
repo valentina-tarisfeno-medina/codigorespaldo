@@ -14,7 +14,7 @@
       <section class="main">
 
     <form method="POST" class="post-form">{% csrf_token %}
-        <h3> ¿Desea eleminiar el registro de {{ res.Nombre_reserva }}? </h3>
+        <h3> ¿Desea eleminiar el registro de {{ res.nombre_reserva }}? </h3>
         <a class= 'btn btn-danger' data-toggle="submit"  href="{% url 'home' %}"> Si, eliminar </a>
         <a class= 'btn btn-default' href="{% url 'home' %}"> Cancelar </a>
         <h1>                 </h1>

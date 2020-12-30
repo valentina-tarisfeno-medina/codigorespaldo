@@ -1,19 +1,16 @@
 from django.contrib import admin
-from .models import SedeCentro, SedeMacul, SedeProvidencia
+from .models import Sede, Detalle_dispo
 
 # Register your models here.
 
-class SedeCentroAdmin(admin.ModelAdmin):
-    list_display=("Sede", "Cantidad_estacionamientos")
+class SedeAdmin(admin.ModelAdmin):
+    list_display=('campus_macul','campus_providencia','casa_central','cantidad_estacionamiento')
 
-admin.site.register(SedeCentro, SedeCentroAdmin)
+admin.site.register(Sede, SedeAdmin)
 
-class SedeMaculAdmin(admin.ModelAdmin):
-    list_display=("Sede", "Cantidad_estacionamientos")
+class Detalle_dispoAdmin(admin.ModelAdmin):
+    list_display=('sede','estado')
 
-admin.site.register(SedeMacul, SedeMaculAdmin)
+admin.site.register(Detalle_dispo, Detalle_dispoAdmin)
 
-class SedeProvidenciaAdmin(admin.ModelAdmin):
-    list_display=("Sede", "Cantidad_estacionamientos")
 
-admin.site.register(SedeProvidencia, SedeProvidenciaAdmin)

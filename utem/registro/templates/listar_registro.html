@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+ <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">Utem Parking</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive"> 
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Menú</a>
+          </li>
+          <li class="nav-item {% if request.path == '/registro' %} active {% endif %}  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'registro' %}">Registro</a>
+          </li>
+          <li class="nav-item  px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'listar_registro' %}">Listar registro</a>
+          </li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <title>
+            Mostrar
+        </title> 
+    </head>
+<body>
+    <header>
+        
+        <h1> Datos  Utem </h1>
+    </header>
+
+<section class="container">
+    <section class="main">
+    <h3>
+        Estacionamiento numero: {{contar}}
+    </h3>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <a href="{% url 'registro' %}" class="btn btn-primary" role="button" data-bs-toggle="button"> + Ingresar funcionario</a>
+        </div>
+        <p> </p>
+        <table class="table table-bordered table-light ">
+            <thead class="thead-light">
+                <tr>
+                    <th scope='col'>Id</th>
+                    <th scope='col'>Nombre</th>
+                    <th scope='col'>Rut</th>
+                    <th scope='col'>Patente</th> 
+                    <th scope='col'>Fecha Ingreso</th> 
+                    <th scope='col'>Fecha Salida</th>    
+                    <th scope='col'>Sede</th>
+                    <th scope='col'>Tipo</th>
+                    <th scope='col'>Motivo</th> 
+                    <th scope='col'>Editar</th>  
+                    <th scope='col'>Eliminar</th>          
+                </tr>
+            </thead>
+            <tbody>
+            {% if registros %}
+            {% for fun in registros%}
+                <tr>
+                    <td scope='row'>{{fun.id}}</td> 
+                    <td> {{ fun.nombre }} </td>
+                    <td> {{ fun.rut }} </td>
+                    <td> {{ fun.patente }} </td>
+                    <td> {{ fun.fecha_entrada }} </td>
+                    <td> {{ fun.fecha_salida }} </td>
+                    <td> {{ fun.sede }} </td>
+                    <td> {{ fun.motivo }} </td>
+                    <td> 
+                      <a class="btn btn-secondary btn-sm" href="{% url 'registro_editar' pk=fun.pk %}"> Editar</a>
+                    </td> 
+                    <td>   
+                      <a class="btn btn-danger btn-sm" href=" {% url 'registro_eliminar' pk=fun.pk %} "> Eliminar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            {% else %}
+            <h1> No existe registro de funcionarios </h1>
+            {% endif %}
+        </table>
+    </section>
+</section>
+
+</body>
+
+{% endblock  %}

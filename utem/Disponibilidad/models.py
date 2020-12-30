@@ -3,33 +3,21 @@ from django.db import models
 
 # Create your models here.
 
-class SedeCentro(models.Model):
+class Sede(models.Model):
     id = models.AutoField(primary_key=True)
-    SEDE_CHOICES=(('Casa central','Casa central'),
-                  ('Campus macul','Campus macul'),
-                  ('Campus providencia','Campus providencia'),)
-    Sede = models.CharField(max_length=100, choices=SEDE_CHOICES, default= "Casa central")
-    Tipousuario=models.CharField(max_length=100)
-    Cantidad_estacionamientos=models.IntegerField()
+    campus_macul = models.CharField(max_length=100)
+    campus_providencia = models.CharField(max_length=100)
+    casa_central=models.CharField(max_length=100)
+    cantidad_estacionamiento=models.IntegerField()
 
 
-class SedeMacul(models.Model):
-    id = models.AutoField(primary_key=True)
-    SEDE_CHOICES=(('Casa central','Casa central'),
-                  ('Campus macul','Campus macul'),
-                  ('Campus providencia','Campus providencia'),)
-    Sede = models.CharField(max_length=100, choices=SEDE_CHOICES, default= "Campus macul")
-    Tipousuario=models.CharField(max_length=100)
-    Cantidad_estacionamientos=models.IntegerField()
-
-class SedeProvidencia(models.Model):
-    id = models.AutoField(primary_key=True)
-    SEDE_CHOICES=(('Casa central','Casa central'),
-                  ('Campus macul','Campus macul'),
-                  ('Campus providencia','Campus providencia'),)
-    Sede = models.CharField(max_length=100, choices=SEDE_CHOICES, default= "Campus providencia")
-    Tipousuario=models.CharField(max_length=100)
-    Cantidad_estacionamientos=models.IntegerField()
+class Detalle_dispo(models.Model):
+    id=models.AutoField(primary_key=True)
+    sede = models.ForeignKey(
+        Sede,
+        on_delete=models.CASCADE,
+    )
+    estado=models.CharField(max_length=100)
 
  
 

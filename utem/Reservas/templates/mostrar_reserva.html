@@ -58,6 +58,8 @@
                     <th scope='col'>Nombre_reserva</th>
                     <th scope='col'>Rut_reserva</th>
                     <th scope='col'>Usuario_Reserva</th>
+                    <th scope='col'>fecha_entrada</th>  
+                    <th scope='col'>fecha_salida</th>  
                     <th scope='col'>Cantidad_horas</th>      
                     <th scope='col'>Patente</th>
                     <th scope='col'>Sede</th> 
@@ -71,13 +73,15 @@
             {% for res in Reservas%}
                 <tr>
                     <th scope='row'>{{res.id}}</th> 
-                    <td> {{ res.Nombre_reserva }} </td>
-                    <td> {{ res.Rut_reserva }} </td>
-                    <td> {{ res.Usuario_Reserva }} </td>
-                    <td> {{ res.Cantidad_horas }} </td>
-                    <td> {{ res.Patente }} </td>
-                    <td> {{ res.Sede }} </td>
-                    <td> {{ res.Motivo }} </td>
+                    <td> {{ res.nombre_reserva }} </td>
+                    <td> {{ res.rut_reserva }} </td>
+                    <td> {{ res.usuario_reserva }} </td>
+                    <td> {{ res.fecha_entrada }} </td>
+                    <td> {{ res.fecha_salida }} </td>
+                    <td> {{ res.cantidad_horas }} </td>
+                    <td> {{ res.patente }} </td>
+                    <td> {{ res.sede }} </td>
+                    <td> {{ res.motivo }} </td>
                     <td> 
                       <a class="btn btn-secondary btn-sm" href="{% url 'res_editar' pk=res.pk %}"> Editar</a>
                     </td> 

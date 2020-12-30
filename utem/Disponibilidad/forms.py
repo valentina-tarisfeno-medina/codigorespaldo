@@ -1,65 +1,44 @@
 from django import forms
-from .models import SedeCentro, SedeMacul, SedeProvidencia
+from .models import Sede, Detalle_dispo
 
-class FormularioSedeCentro(forms.ModelForm):
+class FormularioSede(forms.ModelForm):
     
     class Meta:
-        model = SedeCentro
+        model = Sede
 
-        fields = ('Sede','Tipousuario','Cantidad_estacionamientos')
+        fields = ('campus_macul','campus_providencia','casa_central','cantidad_estacionamiento')
 
         labels = {
-            'Sede':'Sede',
-            'Tipousuario':'Tipousuario',
-            'Cantidad_estacionamientos':'Cantidad estacionamientos ', 
+            'campus_macul':'Campus Macul',
+            'campus_providencia':'Campus Providencia',
+            'casa_central':'Casa Central ', 
+            'cantidad_estacionamiento':'cantidad_estacionamiento',
 
         }
 
         widgets = {
-            'Sede' : forms.TextInput(attrs={'class':'form-control'}),
-            'Tipousuario': forms.TextInput(attrs={'class':'form-control'}),
-            'Cantidad_estacionamientos' : forms.TextInput(attrs={'class':'form-control'})
-             }
-
-class FormularioSedeMacul(forms.ModelForm):
-    
-    class Meta:
-        model = SedeMacul
-
-        fields = ('Sede','Tipousuario','Cantidad_estacionamientos')
-
-        labels = {
-            'Sede':'Sede',
-            'Tipousuario':'Tipousuario',
-            'Cantidad_estacionamientos':'Cantidad estacionamientos ', 
-
-        }
-
-        widgets = {
-            'Sede' : forms.TextInput(attrs={'class':'form-control'}),
-            'Tipousuario': forms.TextInput(attrs={'class':'form-control'}),
-            'Cantidad_estacionamientos' : forms.TextInput(attrs={'class':'form-control'})
+            'campus_macul' : forms.TextInput(attrs={'class':'form-control'}),
+            'campus_providencia': forms.TextInput(attrs={'class':'form-control'}),
+            'casa_central' : forms.TextInput(attrs={'class':'form-control'}),
+            'cantidad_estacionamiento' : forms.TextInput(attrs={'class':'form-control'})
              }
 
 
+    
 
-
-class FormularioSedeProvidencia(forms.ModelForm):
+class FormularioDetalle_dispo(forms.ModelForm):
     
     class Meta:
-        model = SedeProvidencia
+        model = Detalle_dispo
 
-        fields = ('Sede','Tipousuario','Cantidad_estacionamientos')
+        fields = ('sede','estado')
 
         labels = {
-            'Sede':'Sede',
-            'Tipousuario':'Tipousuario',
-            'Cantidad_estacionamientos':'Cantidad estacionamientos ', 
-
+            'sede':'Sede',
+            'estado':'Estado',
         }
 
         widgets = {
-            'Sede' : forms.TextInput(attrs={'class':'form-control'}),
-            'Tipousuario': forms.TextInput(attrs={'class':'form-control'}),
-            'Cantidad_estacionamientos' : forms.TextInput(attrs={'class':'form-control'})
+            'sede' : forms.TextInput(attrs={'class':'form-control'}),
+            'estado': forms.TextInput(attrs={'class':'form-control'})
              }
