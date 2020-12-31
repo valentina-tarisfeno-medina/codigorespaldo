@@ -50,3 +50,4 @@ def listar_sede(request):
     contexto = {'sedes':s}
     return render(request, "mostrarsede.html", contexto)
 
+

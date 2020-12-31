@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'database',
     'Portero',
     'Reservas',
-    'Disponibilidad',
+    'sede',
     'configuracion',
     'registro',
 ]

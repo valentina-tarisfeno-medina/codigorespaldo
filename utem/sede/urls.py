@@ -1,5 +1,5 @@
 from django.urls import path
-from Disponibilidad import views
+from sede import views
 
 urlpatterns =[
     path('sede/',                    views.sede,               name='sede'),

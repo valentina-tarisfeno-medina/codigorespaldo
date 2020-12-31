@@ -1,5 +1,5 @@
 from django.db import models
-from Disponibilidad.models import Sede
+from sede.models import Sede
 
 # Create your models here.
 

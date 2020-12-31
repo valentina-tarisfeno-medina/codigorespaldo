@@ -1,5 +1,6 @@
+from sede.models import Sede
 from django import forms
-from .models import Sede
+
 
 class FormularioSede(forms.ModelForm):
     
@@ -18,4 +19,3 @@ class FormularioSede(forms.ModelForm):
             'nombre_sede' : forms.TextInput(attrs={'class':'form-control'}),
             'cantidad_estacionamiento' : forms.TextInput(attrs={'class':'form-control'})
              }
-

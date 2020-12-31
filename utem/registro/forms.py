@@ -1,4 +1,4 @@
-from Disponibilidad.models import Sede
+from sede.models import Sede
 from django import forms
 from .models import Registro, tipo_registro
 
