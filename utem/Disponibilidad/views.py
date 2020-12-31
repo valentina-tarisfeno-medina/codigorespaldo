@@ -22,14 +22,14 @@ def sede(request):
     return render(request, 'sede.html', {'form': form})
 
 def mostrar_sede(request, pk):
-    sc = get_object_or_404(Sede, id=pk)
-    contexto = {'sede':sc}
+    s = get_object_or_404(Sede, id=pk)
+    contexto = {'sede':s}
     return render(request, "mostrar_registro_sede.html", contexto)
 
 def sede_editar(request, pk):
-    sc = get_object_or_404(Sede, id=pk)
+    s = get_object_or_404(Sede, id=pk)
     if request.method == "POST":
-        form = FormularioSede(request.POST, instance=sc)
+        form = FormularioSede(request.POST, instance=s)
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
@@ -37,16 +37,16 @@ def sede_editar(request, pk):
             post.save()
             return redirect('mostrar_sede', pk=pk)
     else:
-        form = FormularioSede(instance=sc)
+        form = FormularioSede(instance=s)
         return render(request, 'sede.html', {'form': form})
 
 def sede_eliminar(request, pk):
-    sc = get_object_or_404(Sede, id=pk)
-    sc.delete()
-    return render(request, 'verificar.html', {'sc': sc})
+    s = get_object_or_404(Sede, id=pk)
+    s.delete()
+    return render(request, 'verificar.html', {'s': s})
 
 def listar_sede(request):
-    sc=Sede.objects.all()
-    contexto = {'sedes':sc}
+    s=Sede.objects.all()
+    contexto = {'sedes':s}
     return render(request, "mostrarsede.html", contexto)
 

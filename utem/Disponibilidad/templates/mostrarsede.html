@@ -53,14 +53,14 @@
             </thead>
             <tbody>
             {% if sedes %}
-            {% for sc in sedes%}
+            {% for s in sedes%}
                 <tr>
                     <td scope='row'>{{sc.id}}</td> 
-                    <td> {{ sc.nombre_sede }} </td>
-                    <td> {{ sc.cantidad_estacionamiento }} </td>
+                    <td> {{ s.nombre_sede }} </td>
+                    <td> {{ s.cantidad_estacionamiento }} </td>
                     <td> 
-                        <a class="btn btn-primary btn-sm" href="{% url 'sede_editar' pk=sc.pk %}"> Editar</a>
-                        <a class="btn btn-danger btn-sm" href="{% url 'sede_eliminar' pk=sc.pk %}"> Eliminar</a>
+                        <a class="btn btn-primary btn-sm" href="{% url 'sede_editar' pk=s.pk %}"> Editar</a>
+                        <a class="btn btn-danger btn-sm" href="{% url 'sede_eliminar' pk=s.pk %}"> Eliminar</a>
                     </td>
                 </tr>
             {% endfor %}
