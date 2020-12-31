@@ -1,3 +1,4 @@
+
 from sede.models import Sede
 from django import forms
 
@@ -11,7 +12,7 @@ class FormularioSede(forms.ModelForm):
 
         labels = {
             'nombre_sede':'Nombre Sede',
-            'cantidad_estacionamiento':'cantidad_estacionamiento',
+            'cantidad_estacionamiento':'Cantidad Estacionamiento',
 
         }
 
