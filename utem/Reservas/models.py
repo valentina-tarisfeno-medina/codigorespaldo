@@ -1,5 +1,5 @@
-from django.db import models
 from sede.models import Sede
+from django.db import models
 
 # Create your models here.
 
@@ -17,5 +17,4 @@ class Reserva(models.Model):
         on_delete=models.CASCADE,
     )
     motivo=models.CharField(max_length=1000)
-
 
