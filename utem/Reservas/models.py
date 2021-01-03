@@ -12,9 +12,6 @@ class Reserva(models.Model):
     fecha_entrada=models.DateTimeField()
     fecha_salida=models.DateTimeField()
     cantidad_horas=models.PositiveIntegerField()
-    sede = models.ForeignKey(
-        Sede,
-        on_delete=models.CASCADE,
-    )
+    sede = models.ForeignKey(Sede,on_delete=models.SET_NULL, null=True, blank=True)
     motivo=models.CharField(max_length=1000)
 

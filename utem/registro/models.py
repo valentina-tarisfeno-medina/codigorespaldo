@@ -17,10 +17,7 @@ class Registro(models.Model):
     nombre=models.CharField(max_length=200)
     rut=models.CharField(max_length=200)
     patente=models.CharField(max_length=6)
-    sede = models.ForeignKey(
-        Sede,
-        on_delete=models.CASCADE,
-    )
+    sede = models.ForeignKey(Sede,on_delete=models.SET_NULL, null=True, blank=True)
     usuario=models.ForeignKey(
         User,
         on_delete=models.CASCADE,

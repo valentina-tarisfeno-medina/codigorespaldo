@@ -7,17 +7,17 @@
  <!-- Navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
     <div class="container">
-      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'homemacul' %}">Utem Parking</a>
+      <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">Utem Parking</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive"> 
         <ul class="navbar-nav mx-auto">
           <li class="nav-item {% if request.path == '/' %} active {% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'homemacul' %}">Menú</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Menú</a>
           </li>
-          <li class="nav-item {% if request.path == '/configuracionmacul' %} active {% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'configuracionmacul' %}">Configuracion</a>
+          <li class="nav-item {% if request.path == '/configuracion' %} active {% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'configuracion' %}">Configuracion</a>
           </li>
          
         </ul>
@@ -39,7 +39,7 @@
   <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
     Configuracion
   </a>
-  <a href="{% url 'sedemacul' %}" class="list-group-item list-group-item-action">Agregar Sede</a>
+  <a href="{% url 'sede' %}" class="list-group-item list-group-item-action">Agregar Sede</a>
   <a href="#" class="list-group-item list-group-item-action">Otro</a>
   <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
 </div>
