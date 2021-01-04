@@ -4,6 +4,13 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
+
+class TipoRegistro(models.Model):
+    id=models.AutoField(primary_key=True)
+    nombre_registro=models.CharField(max_length=1000)
+
+    def __str__(self) -> str:
+        return self.nombre_registro
 # Create your models here.
 class Registro(models.Model):
     day  = timezone.now()
@@ -24,10 +31,8 @@ class Registro(models.Model):
     )
     fecha_entrada = models.CharField(max_length=50, default=formatedHour)
     fecha_salida = models.CharField(max_length=50, default=formatedHour)
-    tipo=models.CharField(max_length=1000)
+    tipo=models.ForeignKey(TipoRegistro, on_delete=models.SET_NULL, null= True, blank= True)
     motivo = models.CharField(max_length=1000)
 
 
-class tipo_registro(models.Model):
-    id=models.AutoField(primary_key=True)
-    nombre_registro=models.CharField(max_length=1000)
+

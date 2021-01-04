@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'sede',
     'configuracion',
     'registro',
+    'disponibilidad'
 ]
 
 MIDDLEWARE = [

@@ -30,7 +30,7 @@ class FormularioReserva(forms.ModelForm):
             'fecha_entrada' : forms.DateTimeInput(attrs={'type':'date'}),
             'fecha_salida' : forms.DateTimeInput(attrs={'type':'date'}),
             'patente' : forms.TextInput(attrs={'class':'form-control'}), 
-            'sede' : forms.Select(choices=Sede.objects.all(), attrs={'class':'form-control'}), 
+            'sede' : forms.Select(choices={}, attrs={'class':'form-control'}), 
             'motivo' : forms.TextInput(attrs={'class':'form-control'})
              }
 

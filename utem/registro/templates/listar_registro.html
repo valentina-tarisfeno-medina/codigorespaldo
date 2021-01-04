@@ -44,11 +44,8 @@
 
 <section class="container">
     <section class="main">
-    <h3>
-        Estacionamiento numero: {{contar}}
-    </h3>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <a href="{% url 'registro' %}" class="btn btn-primary" role="button" data-bs-toggle="button"> + Ingresar funcionario</a>
+          <a href="{% url 'registro' %}" class="btn btn-primary" role="button" data-bs-toggle="button"> + Ingresar registro</a>
         </div>
         <p> </p>
         <table class="table table-bordered table-light ">
@@ -78,6 +75,7 @@
                     <td> {{ fun.fecha_entrada }} </td>
                     <td> {{ fun.fecha_salida }} </td>
                     <td> {{ fun.sede }} </td>
+                    <td> {{ fun.tipo }} </td>
                     <td> {{ fun.motivo }} </td>
                     <td> 
                       <a class="btn btn-secondary btn-sm" href="{% url 'registro_editar' pk=fun.pk %}"> Editar</a>

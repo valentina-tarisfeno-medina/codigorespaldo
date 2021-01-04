@@ -1,73 +1,24 @@
 from django import forms
-from .models import Portero, Porteromacul, Porteroprovidencia
+from .models import Portero
 
 class FormularioPortero(forms.ModelForm):
     
     class Meta:
         model = Portero
-        fields = ('Nombre','Rut','Sede','Fin_Turno')
+        fields = ('nombre','rut','sede','fin_Turno')
 
         labels = {
-                'Nombre':'Nombre',
-                'Rut':'Rut', 
-                'Sede':'Sede',
-                'Incio_Turno':'Incio Turno',
-                'Fin_Turno':'Fin Turno'
+                'nombre':'Nombre',
+                'rut':'Rut', 
+                'sede':'Sede',
+                'incio_Turno':'Incio Turno',
+                'fin_Turno':'Fin Turno'
             }
 
         widgets = {
-                'Nombre' : forms.TextInput(attrs={'class':'form-control'}),
-                'Rut' : forms.TextInput(attrs={'class':'form-control'}), 
-                'Sede' : forms.TextInput(attrs={'class':'form-control'}),
-                'Incio_Turno' : forms.DateInput(attrs={'type':'date'}), 
-                'Fin_Turno' : forms.DateInput(attrs={'type':'date'})
+                'nombre' : forms.TextInput(attrs={'class':'form-control'}),
+                'rut' : forms.TextInput(attrs={'class':'form-control'}), 
+                'sede' : forms.TextInput(attrs={'class':'form-control'}),  
+                'incio_Turno' : forms.DateInput(attrs={'type':'date'}), 
+                'fin_Turno' : forms.DateInput(attrs={'type':'date'})
                 }
-
-
-
-class FormularioPorteromacul(forms.ModelForm):
-    
-    class Meta:
-        model = Porteromacul
-        fields = ('Nombre','Rut','Sede','Fin_Turno')
-
-        labels = {
-                'Nombre':'Nombre',
-                'Rut':'Rut', 
-                'Sede':'Sede',
-                'Incio_Turno':'Incio Turno',
-                'Fin_Turno':'Fin Turno'
-            }
-
-        widgets = {
-                'Nombre' : forms.TextInput(attrs={'class':'form-control'}),
-                'Rut' : forms.TextInput(attrs={'class':'form-control'}), 
-                'Sede' : forms.TextInput(attrs={'class':'form-control'}),
-                'Incio_Turno' : forms.DateInput(attrs={'type':'date'}), 
-                'Fin_Turno' : forms.DateInput(attrs={'type':'date'})
-                }
-
-
-
-class FormularioPorteroprovidencia(forms.ModelForm):
-    
-    class Meta:
-        model = Porteroprovidencia
-        fields = ('Nombre','Rut','Sede','Fin_Turno')
-
-        labels = {
-                'Nombre':'Nombre',
-                'Rut':'Rut', 
-                'Sede':'Sede',
-                'Incio_Turno':'Incio Turno',
-                'Fin_Turno':'Fin Turno'
-            }
-
-        widgets = {
-                'Nombre' : forms.TextInput(attrs={'class':'form-control'}),
-                'Rut' : forms.TextInput(attrs={'class':'form-control'}), 
-                'Sede' : forms.TextInput(attrs={'class':'form-control'}),
-                'Incio_Turno' : forms.DateInput(attrs={'type':'date'}), 
-                'Fin_Turno' : forms.DateInput(attrs={'type':'date'})
-                }
-

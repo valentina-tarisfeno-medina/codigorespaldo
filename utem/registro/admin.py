@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Registro, tipo_registro
+from .models import Registro, TipoRegistro
 
 # Register your models here.
 
@@ -12,4 +12,4 @@ admin.site.register(Registro, RegistroAdmin)
 class tipo_registroAdmin(admin.ModelAdmin):
     list_display=('id','nombre_registro')
 
-admin.site.register(tipo_registro, tipo_registroAdmin)
+admin.site.register(TipoRegistro, tipo_registroAdmin)

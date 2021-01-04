@@ -1,3 +1,4 @@
+from disponibilidad.functions import asignarEstacionamiento
 from django.db.models import query
 from django.http import HttpResponse
 from django.template import Template,Context
@@ -10,7 +11,7 @@ import datetime
 from django.utils import timezone
 from django.shortcuts import redirect
 import numpy as np 
-from Disponibilidad.models import Sede
+from disponibilidad.models import Disponibilidad
 
 
 def registro(request):
@@ -21,16 +22,16 @@ def registro(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
+            asignarEstacionamiento(post, post.sede )
             return redirect('mostrar_registro', pk=post.id)
     else:
         form = FormularioRegistro()
-        sede = Sede.objects.all()
     return render(request, 'registro.html', {'form': form})
 
 def mostrar_registro(request, pk):
     fun = get_object_or_404(Registro, id=pk)
-    '''numero = contadorfuncionario(pk)'''
-    contexto = {'registro':fun}
+    estacionamiento = Disponibilidad.objects.get(registro = fun) 
+    contexto = {'registro':fun, 'estacionamiento': estacionamiento}
     return render(request, "mostrar_registro.html", contexto)
 
 def registro_editar(request, pk):

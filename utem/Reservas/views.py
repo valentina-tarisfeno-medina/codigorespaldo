@@ -1,3 +1,4 @@
+from disponibilidad.functions import asignarEstacionamientor
 from django.db.models import query
 from django.http import HttpResponse
 from django.template import Template,Context
@@ -9,6 +10,7 @@ from .forms import  FormularioReserva
 import datetime
 from django.utils import timezone
 from django.shortcuts import redirect
+from disponibilidad.models import Disponibilidad
 
 # Create your views here.
 
@@ -20,6 +22,7 @@ def reserva(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
+            asignarEstacionamientor(post, post.sede)
             return redirect('mostrar_reserva', pk=post.id)
     else:
         form = FormularioReserva()
@@ -27,7 +30,8 @@ def reserva(request):
 
 def mostrar_reserva(request, pk):
     res = get_object_or_404(Reserva, id=pk)
-    contexto = {'Reserva':res}
+    estacionamiento = Disponibilidad.objects.get(reserva = res) 
+    contexto = {'Reserva':res, 'estacionamiento': estacionamiento}
     return render(request, "mostrar_registro_res.html", contexto)
 
 def res_editar(request, pk):

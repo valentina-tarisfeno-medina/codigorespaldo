@@ -45,8 +45,9 @@
     <section class="main">
             <div class="alert alert-success" role="alert">
               Funcionario ingresado exitosamente
-            </div>   
+            </div>  
             <tbody>
+
             {% if registro %}
               <ul class="list-group">
                 <li class="list-group-item active" aria-current="true">Datos funcionario</li>
@@ -58,6 +59,7 @@
                 <li class="list-group-item">Fecha Salida: {{ registro.fecha_salida }}</li>
                 <li class="list-group-item">Sede: {{ registro.sede }}</li>
                 <li class="list-group-item">Motivo: {{ registro.motivo }}</li>
+                <li class="list-group-item">Estacionamiento: {{ estacionamiento.numero_estacionamiento }}</li>
               </ul>
             </tbody>
             {% else %}

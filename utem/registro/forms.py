@@ -1,6 +1,6 @@
 from sede.models import Sede
 from django import forms
-from .models import Registro, tipo_registro
+from .models import Registro, TipoRegistro
 
 class FormularioRegistro(forms.ModelForm):
     
@@ -24,17 +24,17 @@ class FormularioRegistro(forms.ModelForm):
             'nombre' : forms.TextInput(attrs={'class':'form-control'}),
             'rut' : forms.TextInput(attrs={'class':'form-control'}), 
             'patente' : forms.TextInput(attrs={'class':'form-control'}),
-            'sede' : forms.Select(choices=Sede.objects.all(), attrs={'class':'form-control'}), 
+            'sede' : forms.Select(choices={}, attrs={'class':'form-control'}), 
             'fecha_entrada' : forms.DateTimeInput(attrs={'type':'date'}), 
             'fecha_salida' : forms.DateTimeInput(attrs={'type':'date'}),
-            'tipo' : forms.TextInput(attrs={'class':'form-control'}),
+            'tipo' : forms.Select(attrs={'class':'form-control'}),
             'motivo' : forms.TextInput(attrs={'class':'form-control'})
              }
 
 class Formulariotipo_registro(forms.ModelForm):
     
     class Meta:
-        model = tipo_registro
+        model = TipoRegistro
 
         fields = ('id','nombre_registro')
 
