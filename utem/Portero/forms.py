@@ -12,7 +12,7 @@ class FormularioPortero(forms.ModelForm):
                 'rut':'Rut', 
                 'sede':'Sede',
                 'incio_Turno':'Incio Turno',
-                'fin_Turno':'Fin Turno'
+                'fin_Turno':'Turno'
             }
 
         widgets = {

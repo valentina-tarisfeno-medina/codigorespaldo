@@ -27,5 +27,8 @@ class Registro(models.Model):
     tipo=models.ForeignKey(TipoRegistro, on_delete=models.SET_NULL, null= True, blank= True)
     motivo = models.CharField(max_length=1000)
 
+    def __str__(self):
+        return self.nombre
+
 
 
