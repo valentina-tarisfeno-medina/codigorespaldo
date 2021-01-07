@@ -17,7 +17,7 @@
             <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Inicio</a>
           </li>
           <li class="nav-item {% if request.path == '/reservas' %} active {% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'reservas' %}">Resesvas</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'reservas' %}">Reservas</a>
           </li>
           <li class="nav-item  px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'listar_reservas' %}">Listar Reservas</a>
@@ -58,8 +58,7 @@
                     <th scope='col'>Nombre_reserva</th>
                     <th scope='col'>Rut_reserva</th>
                     <th scope='col'>Usuario_Reserva</th>
-                    <th scope='col'>fecha_entrada</th>  
-                    <th scope='col'>fecha_salida</th>  
+                    <th scope='col'>fecha_reserva</th>  
                     <th scope='col'>Cantidad_horas</th>      
                     <th scope='col'>Patente</th>
                     <th scope='col'>Sede</th> 
@@ -76,8 +75,7 @@
                     <td> {{ res.nombre_reserva }} </td>
                     <td> {{ res.rut_reserva }} </td>
                     <td> {{ res.usuario_reserva }} </td>
-                    <td> {{ res.fecha_entrada }} </td>
-                    <td> {{ res.fecha_salida }} </td>
+                    <td> {{ res.fecha_reserva }} </td>
                     <td> {{ res.cantidad_horas }} </td>
                     <td> {{ res.patente }} </td>
                     <td> {{ res.sede }} </td>
