@@ -45,8 +45,8 @@
           <li class="nav-item {% if request.path == '/sede'  %} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'listar_sede' %}">Sede</a>
           </li>
-          <li class="nav-item {% if request.path == '/sede'  %} active {% endif %} px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'listar_sede' %}">Disponibilidad</a>
+          <li class="nav-item {% if request.path == '/checkDisponibilidad'  %} active {% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'checkDisponibilidad' %}">Disponibilidad</a>
           </li>
           <li class="nav-item {% if request.path == '/configuracion' %} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'configuracion' %}">Configuración</a>

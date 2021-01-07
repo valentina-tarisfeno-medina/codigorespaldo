@@ -4,7 +4,7 @@ from .models import Registro, TipoRegistro
 # Register your models here.
 
 class RegistroAdmin(admin.ModelAdmin):
-    list_display=('nombre','rut', 'patente','sede','usuario','fecha_salida','tipo','motivo')
+    list_display=('nombre','rut', 'patente','sede','usuario','tipo','motivo')
 
 admin.site.register(Registro, RegistroAdmin)
 

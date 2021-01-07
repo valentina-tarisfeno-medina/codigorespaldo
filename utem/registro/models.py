@@ -12,14 +12,8 @@ class TipoRegistro(models.Model):
     def __str__(self) -> str:
         return self.nombre_registro
 # Create your models here.
-class Registro(models.Model):
-    day  = timezone.now()
-    hour = timezone.now()
-    #formatedHour = hour.strftime("%Y/%m/%d %H:%M:%S")
-    formatedDay  = day.strftime("%Y/%m/%d")
-    formatedHour = hour.strftime("%H:%M:%S")
-    dia = models.CharField(max_length=50, default=formatedDay)
 
+class Registro(models.Model):
     id = models.AutoField(primary_key=True)
     nombre=models.CharField(max_length=200)
     rut=models.CharField(max_length=200)
@@ -29,8 +23,7 @@ class Registro(models.Model):
         User,
         on_delete=models.CASCADE,
     )
-    fecha_entrada = models.CharField(max_length=50, default=formatedHour)
-    fecha_salida = models.CharField(max_length=50, default=formatedHour)
+    fecha_entrada = models.DateTimeField(auto_now_add=True)
     tipo=models.ForeignKey(TipoRegistro, on_delete=models.SET_NULL, null= True, blank= True)
     motivo = models.CharField(max_length=1000)
 
