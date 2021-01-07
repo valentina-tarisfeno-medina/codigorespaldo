@@ -48,7 +48,8 @@
                     <th scope='col'>id</th>
                     <th scope='col'>Nombre Sede </th>
                     <th scope='col'>Cantidad Estacionamiento</th>
-                    <th scope='col'>Acciones</th>           
+                    <th scope='col'>Editar</th>  
+                    <th scope='col'>Eliminar</th>            
                 </tr>
             </thead>
             <tbody>
@@ -60,6 +61,8 @@
                     <td> {{ s.cantidad_estacionamiento }} </td>
                     <td> 
                         <a class="btn btn-primary btn-sm" href="{% url 'sede_editar' pk=s.pk %}"> Editar</a>
+                    </td> 
+                    <td>  
                         <a class="btn btn-danger btn-sm" href="{% url 'sede_eliminar' pk=s.pk %}"> Eliminar</a>
                     </td>
                 </tr>
