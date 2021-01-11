@@ -5,6 +5,8 @@ from .models import Reserva
 
 class ReservaAdmin(admin.ModelAdmin):
     list_display=("nombre_reserva", "patente", "sede")
+    search_fields=("nombre_reserva", "patente", "sede")
+    list_fields=("nombre_reserva", "patente", "sede")
 
 admin.site.register(Reserva, ReservaAdmin)
 

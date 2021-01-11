@@ -5,6 +5,8 @@ from .models import Registro, TipoRegistro
 
 class RegistroAdmin(admin.ModelAdmin):
     list_display=('nombre','rut', 'patente','sede','usuario','tipo','motivo')
+    search_fields=('nombre','rut', 'patente','sede','usuario','tipo','motivo')
+    list_fields=('nombre','rut', 'patente')
 
 admin.site.register(Registro, RegistroAdmin)
 

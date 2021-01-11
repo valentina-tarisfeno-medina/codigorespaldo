@@ -39,9 +39,6 @@
 
 <section class="container">
     <section class="main">
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <a href="{% url 'registro' %}" class="btn btn-primary" role="button" data-bs-toggle="button"> + Ingresar registro</a>
-        </div>
         <p> </p>
         <table class="table table-bordered table-light ">
             <thead class="thead-light">
@@ -49,7 +46,7 @@
                     <th scope='col'>Id</th>
                     <th scope='col'>Registro</th>
                     <th scope='col'>Numero Estacionamiento</th> 
-                    <th scope='col'>Ocupado</th>         
+                    <th class="p-3 mb-2 bg-danger text-white " scope='col'>Ocupado</th>         
                 </tr>
             </thead>
             <tbody>
@@ -59,7 +56,7 @@
                     <td scope='row'>{{dis.id}}</td> 
                     <td> {{ dis.registro }} </td>
                     <td> {{ dis.numero_estacionamiento }} </td>
-                    <td> {{ dis.ocupado }} </td>
+                    <td class="text-danger"> {{ dis.ocupado }} </td>
                 </tr>
             {% endfor %}
             </tbody>

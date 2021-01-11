@@ -10,7 +10,7 @@ def asignarEstacionamiento(registro, sede):
     print(num_ocupados)
     if(num_ocupados == sede.cantidad_estacionamiento):
         print("Todos ocupados")
-        return False;
+        return False; 
     else:
         print("Asignando estacionamiento")
         for espacio in range(1, sede.cantidad_estacionamiento):
@@ -21,7 +21,7 @@ def asignarEstacionamiento(registro, sede):
 
 def asignarEstacionamientor(reserva, sede):
     ocupados = Disponibilidad.objects.filter(reserva__sede = sede)
-    num_ocupados = len(ocupados)
+    num_ocupados = len(ocupados) 
     print(num_ocupados)
     if(num_ocupados == sede.cantidad_estacionamiento):
         print("Todos ocupados")

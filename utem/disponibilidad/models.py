@@ -1,4 +1,3 @@
-from Reservas.models import Reserva
 from registro.models import Registro
 from Reservas.models import Reserva
 from django.db import models
